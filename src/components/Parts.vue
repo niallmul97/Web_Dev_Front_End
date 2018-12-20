@@ -1,26 +1,33 @@
 <template>
   <div>
-    <div id="app1">
-      <h4 class="ui horizontal divider"> </h4>
-      <form v-on:submit.prevent="submit">
-        <div class="form-group">
-          <label class="form__label">Part ID</label>
-          <input class="form__input" v-model.trim="partId"/>
-        </div>
-        <div class="form-group">
-          <b-form-select v-model="selected" :options="options" class="mb-3" />
-          <div>Selected: <strong>{{ selected }}</strong></div>
-        </div>
-        <div class="form-group">
-          <b-form-select v-model="choice" :options="buildIds" class="mb-3" />
-          <div>Selected: <strong>{{ choice }}</strong></div>
-        </div>
-        <p>
-          <button class="btn btn-primary btn1" type="submit">Add to Build</button>
-        </p>
-      </form>
-      <v-client-table :columns="columns" :data="parts" :options="options">
-      </v-client-table>
+    <div class="hero">
+      <div class="ui black inverted center aligned segment">
+        <h1 class="vue-title"><i class="fa fa-wrench" style="padding: 3px"></i>Parts</h1>
+        <p>Browse parts and add them to builds</p>
+      </div>
+      <div class="ui black inverted center aligned segment">
+        <form v-on:submit.prevent="submit">
+          <div class="form-group">
+            <label class="form__label">Part ID</label>
+            <input class="form__input" v-model.trim="partId"/>
+          </div>
+          <div class="form-group">
+            <b-form-select v-model="selected" :options="options" class="mb-3" />
+            <div>Selected: <strong>{{ selected }}</strong></div>
+          </div>
+          <div class="form-group">
+            <b-form-select v-model="choice" :options="buildIds" class="mb-3" />
+            <div>Selected: <strong>{{ choice }}</strong></div>
+          </div>
+          <p>
+            <button class="btn btn-primary btn1" type="submit">Add to Build</button>
+          </p>
+        </form>
+      </div>
+      <div class="ui black inverted center aligned segment">
+        <v-client-table :columns="columns" :data="parts" :options="options">
+        </v-client-table>
+      </div>
     </div>
   </div>
 </template>
@@ -157,11 +164,14 @@ export default {
 </script>
 
 <style scoped>
-  .vue-title {
+  .hero {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
     margin-top: 30px;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    font-size: 45pt;
-    margin-bottom: 10px;
+    background-color: #0f1011;
   }
 
   #app1 {

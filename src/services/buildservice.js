@@ -7,6 +7,9 @@ export default {
   fetchBuild (id) {
     return Api().get(`/builds/${id}`)
   },
+  highestBuild () {
+    return Api().get(`/builds/findHighest`)
+  },
   putCPU (id, partId) {
     return Api().put(`/builds/${id}/partsCPU/${partId}`,
       { headers: {'Content-type': 'application/json'} })

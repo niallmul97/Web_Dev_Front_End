@@ -1,6 +1,10 @@
 <template>
-  <div id="app1" class="hero">
-    <h3 class="vue-title"><i class="fa fa-list" style="padding: 3px"></i>{{messagetitle}}</h3>
+  <div class="hero">
+    <div class="ui black inverted center aligned segment">
+      <h1 class="vue-title"><i class="fa fa-desktop" style="padding: 3px"></i>Create a build</h1>
+      <p>Create a basic build and edit it later from the parts menu</p>
+    </div>
+    <div class="ui black inverted center aligned segment">
     <div class="container mt-3 mt-sm-5">
       <div class="row justify-content-center">
         <div class="col-md-6">
@@ -27,6 +31,7 @@
           </form>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </template>
@@ -130,11 +135,14 @@ export default {
 </script>
 
 <style scoped>
-  .vue-title {
+  .hero {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
     margin-top: 30px;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    font-size: 45pt;
-    margin-bottom: 10px;
+    background-color: #0f1011;
   }
 
   #app1 {
